@@ -1,0 +1,80 @@
+.fancy-header{
+    text-align: center;
+    color: #950ea3;
+    text-decoration: underline;
+    font-family:cursive;
+    font-weight:bold;
+
+}
+body{
+    background-image: url('https://images.pexels.com/photos/1037994/pexels-photo-1037994.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    background-repeat:repeat-y;
+}
+p {
+    text-align:center;
+    color: #9d25a8;
+}
+
+.list1 {
+    color: rgba(255, 255, 0, 0.73);
+    font-weight:bold;
+}
+.list1 ul{
+    list-style:square;
+    color: rgba(255, 255, 0, 0.73)
+}
+.list2 {
+    color: #eee9e9;
+    font-weight:bold;
+}
+.list2 ol{
+    list-style:upper-alpha;
+}
+.list3{
+    color: rgba(48, 144, 48, 0.7);
+    font-weight:bold;
+
+}
+.list3 ul{
+    list-style: georgian;
+}
+.image1 h2{
+    color: #974755;
+    font-weight:bold;
+}
+.table1 h2{
+    color: #529bb8;
+    font-weight:bold;
+
+}
+table{
+    border-collapse: collapse;
+    padding:1em;
+
+}
+table,th,td {
+    border: 1px solid dodgerblue;
+    background-color: #a667b4;
+    text-align: center;
+    color: white;
+}
+/* unvisited link (:link) */
+a:link {
+    color: #399593;
+
+}
+
+/* visited link (:visited) */
+a:visited {
+    color: #dc6b6b;
+}
+
+/* mouse hover over link (:hover) */
+a:hover {
+    color: #4f8944;
+}
+
+/* active/selected link (:active) */
+a:active {
+    color: #ac8638;
+}
