@@ -43,6 +43,8 @@ let premiumNumber = confirm("Press Ok, if you are the Premium Member.");
 let offerApplied = notExpired && (MoreThan2 || premiumNumber);
 if (offerApplied){
     alert("Congrets, you are qualified to have the exclusive product offer!");
+} else{
+    alert("Sorry, you are not qualified for the product offer!")
 }
 
 
