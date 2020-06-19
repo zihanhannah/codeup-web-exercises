@@ -9,7 +9,7 @@
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
 function sayHello(name){
-    return ("Hello, "+ name);
+    return ("Hello, "+ name + "!");
 }
 
 
@@ -28,7 +28,7 @@ console.log(helloMessage);
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
-var myName = "Zihan";
+var myName = "Codeup Student ";
 console.log(sayHello(myName));
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -68,7 +68,7 @@ console.log(isTwo(random));
  */
 function calculateTip(tipPercentage,totalBill){
 
-   return (totalBill * tipPercentage);
+   return ((totalBill * tipPercentage).toFixed(2));
 }
 console.log(calculateTip(0.20,20));
 console.log(calculateTip(0.25,25.50));
@@ -83,9 +83,10 @@ console.log(calculateTip(0.15,33.42));
  * then display the dollar amount they should tip
  */
 
-var totalBillis = prompt("the total bill is: $");
-var tipPercentageis = prompt("the percentage of the tip is:");
-alert('The total tips are: $' + calculateTip(totalBillis,tipPercentageis));
+var totalBillis = parseFloat(prompt("the total bill is: $"));
+var tipPercentageis = +(prompt("what percentage would you like to tip?(i.e. 0.2 for 20%)"));
+//    easiest way to turn string into number +"string" >>>>Number
+alert('The total tips are: $' + calculateTip(tipPercentageis,totalBillis);
 console.log("The total tips are: $" + calculateTip(tipPercentageis,totalBillis));
 
 /**
@@ -106,6 +107,6 @@ function applyDiscount(originalPrice,discountPercentage){
     return(originalPrice*(1-discountPercentage));
 
 }
-var originalPrice = 100;
-var discountPercent = 0.2;
+let originalPrice = 100;
+let discountPercent = 0.2;
 console.log("the price after discount is: $" + applyDiscount(originalPrice,discountPercent));
