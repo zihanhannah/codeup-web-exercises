@@ -89,9 +89,37 @@
      console.log(num1 + 4 * num2);
 
     }
-     countFromBy(10,5);
+     // countFromBy(10,5);
+ // Write a JS function called magic8Ball that takes in one number as a parameter. The return value should be one of the following strings that correlates to the number passed in.
+ let luckyNumber = Math.floor(Math.random() * 8)
 
+ function magic8Ball(luckyNumber) {
+     switch (luckyNumber) {
+         case 1:
+             return("as I see it, yes");
 
+         case 2:
+             return("Ask again later");
+
+         case 3:
+             return("better not tell you now");
+
+         case 4:
+             return("Cannot predict now");
+
+         case 5:
+             return("concentrate and ask again");
+
+         case 6:
+             return("Don’t count on it.");
+         case 7:
+             return("Outlook not so good.");
+         case 8:
+             return("Outlook is good.");
+     }
+
+ }
+ alert(magic8Ball(luckyNumber));
     </script>
 
 </body>
