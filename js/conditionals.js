@@ -1,4 +1,4 @@
-// "use strict";
+"use strict";
 //
 // /* ########################################################################## */
 //
@@ -19,6 +19,19 @@
 //  * Test your function by passing various string literals to it and
 //  * console.logging the function's return value
 //  */
+function analyzeColor(color){
+    if (color === "blue") {
+        return("Blue is the color of the sky");
+    } else if (color === "red") {
+        return ("Strawberries are red.");
+    } else if(color === "cyan"){
+        return("I don't know anything about cyan")
+    } else {
+        return("I don't know what " + color + " is");
+    }
+}
+// console.log(analyzeColor("blue"));
+
 
 //
 // // Don't change the next two lines!
@@ -33,46 +46,45 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
 //  * Pass the `randomColor` variable to your function and console.log the results.
 //  * You should see a different message every time you refresh the page
 //  */
-// analyzeColor(randomColor);
-//
+
+// console.log(analyzeColor(randomColor));
+
+
+
 // /**
 //  * TODO:
 //  * Refactor your above function to use a switch-case statement
 //  */
 //
-// function analyzeColor2(color){
-//     switch(color){
-//         case "blue":
-//            console.log("blue is the color of the sky");
-//             break;
-//         case "red":
-//             console.log("Strawberries are red!");
-//             break;
-//         default:
-//             console.log("I don't know anything about " + color);
-//     }
-// }
-// analyzeColor2('cyan');
+function analyzeColor(randomColor){
+    switch(randomColor){
+        case "blue":
+           return ("blue is the color of the sky");
+
+        case "red":
+            return ("Strawberries are red!");
+
+        case "cyan":
+            return ("I don't know anything about cyan");
+
+        default:
+            return ("I don't know what " + randomColor + " is");
+    }
+}
+console.log(analyzeColor(randomColor));
+
+
 // /**
 //  * TODO:
-//  * Prompt the user for a color when the page loads, and pass the input from the
+//  * Prompt the user for a color when the page loads, and pass the input from the.toFixed(2
 //  * user to your `analyzeColor` function. Alert the return value from your
 //  * function to show it to the user.
 //  */
-// let color = prompt("What is your favourite color?");
-// function analyzeColor(color) {
-//     if (color === "blue") {
-//         alert("Blue is the color of the sky");
-//         console.log("Blue is the color of the sky");
-//     } else if (color === "red") {
-//         alert("Strawberries are red.")
-//         console.log("Strawberries are red.");
-//     } else {
-//         alert("I don't know anything about " + color);
-//         console.log("I don't know anything about " + color);
-//     }
-// }
-// analyzeColor(color);
+let color = prompt("What is your favourite color?");
+// alert(analyzeColor(color));
+
+
+
 // /* ########################################################################## */
 //
 // /**
@@ -94,31 +106,36 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
 //  * Test your function by passing it various values and checking for the expected
 //  * return value.
 //  */
-// function calculateTotal(luckyNum,totalAmount){
-//     switch(luckyNum){
-//         case 0:
-//             console.log (totalAmount);
-//             break;
-//         case 1:
-//             console.log(totalAmount * 0.9);
-//             break;
-//         case 2:
-//             console.log(totalAmount * 0.75);
-//             break;
-//         case 3:
-//             console.log(totalAmount * .65);
-//             break;
-//         case 4:
-//             console.log(totalAmount * 0.5);
-//             break;
-//         case 5:
-//             console.log(0);
-//             break;
-//     }
-// }
+function calculateTotal(luckyNum,totalAmount){
+    switch(luckyNum){
+        case 0:
+            return (+(totalAmount).toFixed(2));
+
+        case 1:
+            return (+(totalAmount * 0.9).toFixed(2));
+
+        case 2:
+            return (+(totalAmount * 0.75).toFixed(2));
+
+        case 3:
+            return (+(totalAmount * .65).toFixed(2));
+
+        case 4:
+            return (+(totalAmount * 0.5).toFixed(2));
+
+
+        case 5:
+            return (+(0).toFixed(2));
+
+
+    }
+}
 // calculateTotal(0, 100)
 // calculateTotal(4, 100)
 // calculateTotal(5, 100)
+
+
+
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 6.
@@ -127,37 +144,15 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-//  var luckyNum = Math.floor(Math.random() * 6);
-//  var totalAmount = +prompt("what's your total bill amount?")
-//  function calculateTotal(luckyNum,totalAmount){
-//     switch(luckyNum){
-//         case 0:
-//             alert("your lucky number is 0." + "your original bill is $" + totalAmount + ". your bill amount after discount is $" + totalAmount);
-//             console.log (totalAmount);
-//             break;
-//         case 1:
-//             alert("your lucky number is 1." + "your original bill is $" + totalAmount + ". your bill amount after discount is $" + totalAmount*0.9);
-//             console.log(totalAmount * 0.9);
-//             break;
-//         case 2:
-//             alert("your lucky number is 2." + "your original bill is $" + totalAmount + ". your bill amount after discount is $" + totalAmount*0.75);
-//             console.log(totalAmount * 0.75);
-//             break;
-//         case 3:
-//             alert("your lucky number is 3." + "your original bill is $" + totalAmount + ". your bill amount after discount is $" + totalAmount*0.65);
-//             console.log(totalAmount * .65);
-//             break;
-//         case 4:
-//             alert("your lucky number is 4." + "your original bill is $" + totalAmount + ". your bill amount after discount is $" + totalAmount*0.5);
-//             console.log(totalAmount * 0.5);
-//             break;
-//         case 5:
-//             alert("your lucky number is 5." + "your original bill is $" + totalAmount + ". your bill amount after discount is $0" );
-//             console.log(0);
-//             break;
-//     }
-// }
-// calculateTotal(luckyNum,totalAmount)
+ var luckyNum = Math.floor(Math.random() * 6);
+ var totalAmount = +prompt("what's your total bill amount?")
+ var billafterDiscount = calculateTotal(luckyNum,totalAmount)
+ alert("Your lucky number is " + luckyNum);
+ alert("Your price before discount is : $" + totalAmount);
+ alert("your bill amount after discount is: $" + billafterDiscount );
+
+
+
 /**
  * TODO:
  * Write some JavaScript that uses a `confirm` dialog to ask the user if they
@@ -181,7 +176,7 @@ if (confirm("would you like to enter a Number?")){
           alert("this is a even number!");
           alert("the number you entered plus 100 is " + (num + 100));
           if (num > 0){
-              alert("It's a positive number");
+              alert("It's a positive number.");
           } else if (num < 0){
 
                   alert("It's a negative number");
@@ -199,4 +194,6 @@ if (confirm("would you like to enter a Number?")){
    } else {
        alert("This is not a Number!");
    }
+} else {
+    console.log("don't want to enter a number");
 }
