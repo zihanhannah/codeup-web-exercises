@@ -119,7 +119,20 @@
      }
 
  }
- alert(magic8Ball(luckyNumber));
+ // alert(magic8Ball(luckyNumber));
+    let lights = "on";
+    let lightSwitch = function(){
+        if (lights === "on"){
+            lights = "off";
+        } else {
+            lights = "on";
+        }
+
+    }
+    console.log(lights);
+    lightSwitch();
+    console.log(lights + "now");
+
     </script>
 
 </body>
