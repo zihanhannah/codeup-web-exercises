@@ -144,6 +144,38 @@
 }
 countTo10();
 
+    // a + b
+    let addition = function(a,b){
+    //    for loop
+        for (; b > 0; b--){
+            a++;
+        }
+        return a;
+
+    // //    while loop
+    //     while( b > 0 ){
+    //         a++;
+    //         b--;
+    //     }
+    //     return a;
+    }
+
+    console.log(addition(2,7));
+//    a * b
+let multiply = function(a,b){
+    let answer= 0
+    while(b > 0){
+        answer += a;
+        b--;
+    }
+    // for( ; b > 0 ; b--){
+    //   answer += a;
+    // }
+    return answer;
+    }
+console.log(multiply(2,7));
+
+
     </script>
 
 </body>
