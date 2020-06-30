@@ -7,23 +7,26 @@ while(y < 65536){
     i++;
 }
 
+// let num = 1;
+// while(num < 65536){
+//     num *= 2;
+//     console.log(num);
+// }
+
 // do while loop
 var allCones = Math.floor(Math.random() * (50)) + 50;
 console.log(allCones);
 
 do{
     var coneSold = Math.floor(Math.random() * 5) + 1;
-    var allCones = allCones - coneSold;
-    console.log(allCones);
-    console.log(coneSold);
-    if( allCones > coneSold){
 
-        console.log("there are enough cones");
+    if( allCones >= coneSold){
+        allCones = allCones - coneSold;
+        console.log(coneSold + " cones sold...");
+    } else {
+        console.log("cannot sell you " + coneSold + " cones I only have " + allCones + "...");
 
-    } else if(allCones < coneSold){
-
-        console.log("There are not enough cones.Yay! I sold them all!")
     }
 
-} while(allCones > 0)
-
+} while(allCones > 0);
+console.log("Yay! I sold them all!")
