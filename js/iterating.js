@@ -15,7 +15,7 @@ let names = [ "Hannah" , "Hung" , "David" , "Daniel" ];
      * array.
      */
 
-console.log(names.length);
+console.log("there are " + names.length + "elements in the array");
 
     /**
      * TODO:
@@ -23,10 +23,10 @@ console.log(names.length);
      * accessing each element's index.
      */
 
-    console.log(name[0]);
-    console.log(name[1]);
-    console.log(name[2]);
-    console.log(name[3]);
+    console.log("the first name in the array is " + names[0]);
+    console.log("the second name in the array is " + names[1]);
+    console.log("the third name in the array is " + names[2]);
+    console.log("the fourth name in the array is "+ names[3]);
 
 
 
@@ -37,16 +37,16 @@ console.log(names.length);
      */
 
     for (var i = 0 ; i < names.length ; i++){
-        console.log(names[i]);
+        console.log("the " + (i+1) + " name in the array is " + names[i]);
     }
 
     /**
      * TODO:
      * Refactor your above code to use a `forEach` loop
      */
-
+console.log(" The name in the name array is: ")
     names.forEach(function(name) {
-        console.log(name);
+        console.log("\t" + name);
     })
 
     /**
@@ -64,19 +64,18 @@ console.log(names.length);
      */
 
     var numArray = [ 1, 2, 3, 4, 5];
-    console.log(numArray[0]);
-    console.log(numArray[1]);
-    console.log(numArray[4]);
-    for (var i = 0; i < numArray.length; i++){
-        if (i === 0){
-            console.log(numArray[0]);
-        } else if (i === 1){
-            console.log(numArray[1]);
-        } else if (i === 4){
-            console.log(numArray[4]);
-        }
+    function first(arr){
+        return (arr[0]);
+     }
+    function second (arr){
+        return (arr[1]);
+    }
+    function last (arr){
+        return (arr[arr.length-1]);
     }
 
-
+    console.log(first(numArray));
+    console.log(second(numArray));
+    console.log(last(numArray));
 
 })();
