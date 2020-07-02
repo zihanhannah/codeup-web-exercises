@@ -184,6 +184,29 @@ var doubleChar = function(str){
 }
 // console.log(doubleChar("123"));
 
+    // Using Number.isInteger() and Number.MAX_SAFE_INTEGER
+    // Write a function, isPrime(), to take in one argument and return
+    // true if it is prime and false if it is not.
+    function isPrime(num){
+    if(Number.isInteger(num)){
+        if(num>1){
+            if(num == 2 ){
+                return true;
+            } else {
+            for(var i = 2; i < num ; i++){
+                if(num % i != 0){
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+            }
+        }
+    }
+    return false;
+    }
+
+    console.log(isPrime(-1));
     </script>
 
 </body>
