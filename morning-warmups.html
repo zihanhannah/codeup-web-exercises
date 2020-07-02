@@ -189,7 +189,7 @@ var doubleChar = function(str){
     // true if it is prime and false if it is not.
     function isPrime(num){
     if(Number.isInteger(num)){
-        if(num>1){
+        if(num>1 && num < Number.MAX_SAFE_INTEGER){
             if(num == 2 ){
                 return true;
             } else {
