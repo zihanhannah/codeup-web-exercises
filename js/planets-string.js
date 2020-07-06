@@ -28,12 +28,8 @@
     console.log(planetsString);
 
 //    bonus
-    planetsArray = planetsString.split("<br>");
-    console.log(planetsArray);
-    planetsArray.unshift("<ul>");
-    planetsArray.push("<ul>");
-    console.log(planetsArray);
-    planetsString = planetsArray.join("<li>");
-    console.log(planetsString);
-
+    var htmlString = '<ul> <li>';
+    htmlString += planetsArray.join('</li> <li>');
+    htmlString += '</li> </ul>';
+    console.log(htmlString);
 })();
