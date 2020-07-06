@@ -17,7 +17,13 @@
     person.lastName = "Zhao";
     console.log(person.firstName);
     console.log(person.lastName);
-
+    // var person = {
+    //     firstName : "Zihan",
+    //     lastName : "Zhao"
+    //      sayHello:function() {
+    //          return ("Hello from " + this.firstName + " " + this.lastName);
+    //      }
+    // }
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -29,7 +35,7 @@
      */
 
     person.sayHello = function(){
-        return ("Hello from " + person.firstName + " " + person.lastName);
+        return ("Hello from " + this.firstName + " " + this.lastName);
     }
     console.log(person.sayHello());
 
@@ -51,21 +57,25 @@
         {name: 'Ryan', amount: 250},
         {name: 'George', amount: 320}
     ];
-    // fruits.forEach(myTwoParamFunction);
-    // function myTwoParamFunction(thing, index) {
-    //     alert('the thing at index ' + index + ' is ' + thing + '.');
-    // }
-    // for(var i = 0 ; i < shoppers.length; i++){
-    //     for(var j = 0 ; j < shoppers[i].length; j++) {
-    //         if (shoppers.amount[j] > 200) {
-    //             console.log("you got 12% discount" / n + "your amount after discount is " + (amount[j] * 88 %));
-    //         } else {
-    //             console.log("your amount is " + shoppers.amount[j]);
-    //         }
+
+    // for(let shopper of shoppers){
+    //    if(shopper.amount < 200){
+    //        console.log(shopper.amount);
+    //    } else {
+    //        console.log(shopper.amount * .88);
+    //    }
     //     }
-    //
-    //
-    // }
+
+   shoppers.forEach(function(shopper){
+        if(shopper.amount <= 200){
+            console.log(shopper.name + " spent $"+ shopper.amount + " without any discount" );
+        } else {
+            console.log(shopper.name + " spent $" + shopper.amount * .88 + " with 12% discount");
+        }
+    })
+
+
+
 
 
     /** TODO:
@@ -145,13 +155,20 @@
      *      ---
      *      ...
      */
-for(var i = 0 ; i < books.length; i++){
-    console.log("Book # " + (i+1));
-    console.log("Title: " + books[i].title);
-    console.log("Author: " + books[i].author.firstName + " " + books[i].author.lastName);
+// for(var i = 0 ; i < books.length; i++){
+//     console.log("Book # " + (i+1));
+//     console.log("Title: " + books[i].title);
+//     console.log("Author: " + books[i].author.firstName + " " + books[i].author.lastName);
+//     console.log("---");
+//
+// }
+ books.forEach(function(book,index){
+    console.log("book # " + (index+1));
+    console.log("Title: " + book.title);
+    console.log("Author: " + book.author.firstName + " "+ book.author.lastName );
     console.log("---");
+    });
 
-}
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -162,6 +179,37 @@ for(var i = 0 ; i < books.length; i++){
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+    // function createBook(title, author) {
+    //     return {title: title, author: author};
+    // }
+    // books.push(createBook("To Kill a Mockingbird", "Harper Lee"));
+    //
+    // function showBookInfo(book) {
+    //     console.log(`Title: ${book.title}\nAuthor: ${book.author}\n---`);
+    // }
+    // books.forEach((el, idx) => {
+    //     console.log(`Book # ${idx + 1}`);
+    //     showBookInfo(el);
+    // });
+    const createBook = function (title, firstName, lastName) {
+            let book = {};
+            book.title = title;
+            book.author = {};
+            book.author.firstName = firstName;
+            book.author.lastName = lastName;
+            return book;
+            // return {title,author:{firstName,lastName}}
+        }
+    const showBookInfo = function(book,index){
+        console.log("Book # " + (index+1));
+        console.log("Title: " + book.title);
+        console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+        console.log("---");
+    }
 
+    let books2 = [];
+    books2.push(createBook("Salmon of Doubt","Douglas","Adams"));
+
+    books2.forEach(showBookInfo);
 
 })();
