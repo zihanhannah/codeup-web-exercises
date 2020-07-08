@@ -78,3 +78,6 @@ a:hover {
 a:active {
     color: #ac8638;
 }
+.img-circle{
+    border-radius:10em;
+}

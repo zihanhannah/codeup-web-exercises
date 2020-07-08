@@ -86,7 +86,7 @@ console.log(calculateTip(0.15,33.42));
 var totalBillis = parseFloat(prompt("the total bill is: $"));
 var tipPercentageis = +(prompt("what percentage would you like to tip?(i.e. 0.2 for 20%)"));
 //    easiest way to turn string into number +"string" >>>>Number
-alert('The total tips are: $' + calculateTip(tipPercentageis,totalBillis);
+alert('The total tips are: $' + calculateTip(tipPercentageis,totalBillis));
 console.log("The total tips are: $" + calculateTip(tipPercentageis,totalBillis));
 
 /**

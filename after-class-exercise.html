@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>after-class-exercise</title>
+</head>
+<body>
+<script>
+//TODO: Write a function that loops through a string. For each character in the string that is a vowel (aeiou/AEIOU), add it to an array and return the array
+str1 = "";
+vowel = "aeiouAEIOU"
+function arrVowel(str){
+    for(var i = 0 ; i < str.length; i++){
+    if(vowel.indexOf(str[i]) != -1){
+        str1 += str[i];
+    }
+    }
+    var array = str1.split(",");
+    return array
+}
+console.log(arrVowel("akjemeo"));
+
+
+//TODO: Write a function that checks if someone is 21 or older. If they are over 21, return true. Otherwise return false.
+
+function Over21(input){
+    if (input >= 21){
+        return true;
+    } else {
+        return false;
+    }
+}
+//TODO: Write a function that will set an interval that counts down from 10 at 1second intervals. Every count should be logged to the console. If the count reaches zero, then return an alert that says 'lift off!'
+var count = 10;
+var intervaliId = setInterval(function (){
+   if(count >0){
+       console.log(count);
+       count--;
+   }else if (count == 0){
+       alert("lift off!");
+       clearInterval(intervaliId);
+   }
+}, 1000)
+
+//TODO: Given the following array of objects, write a function that takes in the array and return the object that costs the most money.
+var storeItems = [
+{
+name: 'hammer',
+price: 10.99
+},
+{
+name: 'macbook',
+price: 1599.99
+},
+{
+name: 'chair',
+price: 35.99
+},
+{
+name: 'bike',
+price: 140.99
+}
+];
+var price = 0;
+var j = 0
+function mostExpensive(input){
+    for (var i= 0 ; i <  storeItems.length ; i++){
+       if(price < storeItems[i].price){
+           price = storeItems[i].price;
+           j = i;
+       }
+    }
+    return storeItems[j].name;
+
+}
+console.log(mostExpensive(storeItems));
+</script>
+<h1>DOM Exercise #1</h1>
+<p id="red-text">TODO: Change my text red!</p>
+<p id="bold-font">TODO: Make this text bold</p>
+<p id="helvetica-font">TODO: Make my font 'Helvetica'</p>
+<p class="log-me">TODO: Console log my innerHTML content to the console</p>
+<p class="log-me">TODO: Console log my outerHTML content to the console</p>
+<p class="log-me">TODO: Console log my class name to the console</p>
+<p class="log-me" id="i-have-an-id">TODO: Console log my attributes to the console</p>
+<h1>TODO: Replace all of these movies with your own top 3 movies using DOM</h1>
+<ol>
+    <li id="movie-1">Forrest Gump</li>
+    <li id="movie-2">Batman: The Dark Knight</li>
+    <li id="movie-3">Inception</li>
+</ol>
+<script>
+    "use strict";
+    (function(){
+        var p0 = document.getElementById("red-text");
+        p0.style.color= "red";
+        var p1 = document.getElementById("bold-font");
+        p1.style.fontWeight = "bold";
+        var p2 = document.getElementById("helvetica-font");
+        p2.style.fontFamily = "helvetica";
+        var p = document.getElementsByTagName("p");
+        console.log(p[3].innerHTML);
+        console.log(p[4].outerHTML);
+        console.log(p[5].className);
+        console.log(p[6].attributes);
+        var listItems = document.getElementsByTagName("li");
+        listItems[0].innerHTML = "super-man";
+        listItems[1].innerHTML = "spider-man";
+        listItems[2].innerHTML = "star-war";
+
+
+    })()
+</script>
+</body>
+</html>

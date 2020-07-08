@@ -47,6 +47,7 @@ console.log("there are " + names.length + "elements in the array");
 console.log(" The name in the name array is: ")
     names.forEach(function(name) {
         console.log("\t" + name);
+
     })
 
     /**

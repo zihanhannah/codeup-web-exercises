@@ -194,19 +194,18 @@ var doubleChar = function(str){
                 return true;
             } else {
             for(var i = 2; i < num ; i++){
-                if(num % i != 0){
-                    return true;
-                } else {
+                if(num % i == 0){
                     return false;
                 }
             }
             }
+            return true;
         }
     }
     return false;
     }
 
-    // console.log(isPrime(-1));
+    console.log(isPrime(15));
 
     //    fizzbuzz
 function fizzBuzz (num) {
@@ -223,7 +222,8 @@ function fizzBuzz (num) {
     }
 
 }
-fizzBuzz(50);
+// fizzBuzz(50);
+
     </script>
 
 </body>
