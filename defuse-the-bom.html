@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<h2 id="message">This BOM will self destruct in <span id="timer">5</span> seconds...</h2>
+<h2 id="message">This BOM will self destruct in <span id="timer">5</span> <span id = "second">seconds...</span></h2>
 <button id="defuser">Defuse the BOM</button>
 
 <script>
@@ -18,9 +18,12 @@
     // TODO: This function needs to be called once every second
    var intervalId = setInterval (function updateTimer() {
         if (detonationTimer == 0) {
-            alert('EXTERMINATE!');
+            // alert('EXTERMINATE!');
             document.body.innerHTML = '';
         } else if (detonationTimer > 0) {
+            if (detonationTimer == 1) {
+                document.getElementById("second").innerHTML = "second";
+            }
             document.getElementById('timer').innerHTML = detonationTimer;
         }
 
