@@ -53,10 +53,14 @@
         for(var i = 0; i < listItems.length ; i++){
             if (i % 2 == 1){
                 listItems[i].style.color= "grey";
+            } else if ( listItems[i].hasAttribute('data-dbid')){
+                if (listItems[i].getAttribute('data-dbid') =='1'){
+                    listItems[0].style.color = "blue";
+                }
             }
         }
         // TODO: Set text color of li with dbid = 1 to blue
-        listItems[0].style.color = "blue";
+
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
 
