@@ -5,57 +5,80 @@
     <title>dom</title>
 </head>
 <body>
-<p id = "demo1" >Hello</p>
-<p id = "demo2" data-dbfield = "field-seven">hahahah</p>
-<p id = "demo3" style = "font-size: 6rem">Hello</p>
+<form name="login">
+    <div>
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text">
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password">
+    </div>
+    <div>
+        <input type="submit">
+    </div>
+</form>
 <script>
     "use strict";
-    // MINI LAB
-    // Create an <p> tag with the id='demo'
-    // Change the the style to have font-size to 6rem;'
-    // Create a <p> tag with the id='demo2' and a data-* attribute
-    // Log the attribute to the console log or alert it.
-    var demo1 = document.getElementById('demo1');
-    demo1.setAttribute('style', 'font-size: 6rem');
-    var demo2 =document.getElementById("demo2");
-    var dataAttr = demo2.getAttribute("data-dbfield");
-    console.log(dataAttr);
+    (function() {
+        // get the "username" input
+        var usernameInput = document.forms.login.username;
 
-
-
-    //  var Demo = document.getElementById("demo");
-    //  Demo.innerHTML = "<b> Hello Hyperion!</b>"
-    // var DemoText = document.getElementById("demoText");
-    // DemoText.innerText = "<b> Hello Hyperion!</b>"
-    // MINI LAB
-    // Write the value of an input field to the console log directly using its name through a form.
-
-    // "use strict";
-    // (function() {
-    //     var username = document.forms.fred.username.value;
-    //     console.log(username);
-    // })();
-    // function saveUsername() {
-    //     var username = document.forms.fred.username.value;
-    //     console.log(username);
-    // }
-    //
-    //
-    // })();
-    // (function() {
-    //     var getAllB = document.getElementsByTagName("p");
-    //
-    //
-    //     for(var i = 0; i < getAllB.length; i++){
-    //         console.log(getAllB[i].innerHTML);
-    //     }
-    //
-    // })();
-    // MINI LAB
-    // Create a page with a four paragraph tags.
-    //     Two of them should have class='a' and two should have class='b'.
-    //     Use document.getElementsByClassName() to get all the paragraphs tags from class 'b'.
-    //     Write their outerHTML text to the console log.
+        // log the value of the "username" input
+        console.log(usernameInput.value);
+    })();
 </script>
+<!--<p id = "demo1" >Hello</p>-->
+<!--<p id = "demo2" data-dbfield = "field-seven">hahahah</p>-->
+<!--<p id = "demo3" style = "font-size: 6rem">Hello</p>-->
+<!--<script>-->
+<!--    "use strict";-->
+<!--    // MINI LAB-->
+<!--    // Create an <p> tag with the id='demo'-->
+<!--    // Change the the style to have font-size to 6rem;'-->
+<!--    // Create a <p> tag with the id='demo2' and a data-* attribute-->
+<!--    // Log the attribute to the console log or alert it.-->
+<!--    var demo1 = document.getElementById('demo1');-->
+<!--    demo1.setAttribute('style', 'font-size: 6rem');-->
+<!--    var demo2 =document.getElementById("demo2");-->
+<!--    var dataAttr = demo2.getAttribute("data-dbfield");-->
+<!--    console.log(dataAttr);-->
+
+
+
+<!--    //  var Demo = document.getElementById("demo");-->
+<!--    //  Demo.innerHTML = "<b> Hello Hyperion!</b>"-->
+<!--    // var DemoText = document.getElementById("demoText");-->
+<!--    // DemoText.innerText = "<b> Hello Hyperion!</b>"-->
+<!--    // MINI LAB-->
+<!--    // Write the value of an input field to the console log directly using its name through a form.-->
+
+<!--    // "use strict";-->
+<!--    // (function() {-->
+<!--    //     var username = document.forms.fred.username.value;-->
+<!--    //     console.log(username);-->
+<!--    // })();-->
+<!--    // function saveUsername() {-->
+<!--    //     var username = document.forms.fred.username.value;-->
+<!--    //     console.log(username);-->
+<!--    // }-->
+<!--    //-->
+<!--    //-->
+<!--    // })();-->
+<!--    // (function() {-->
+<!--    //     var getAllB = document.getElementsByTagName("p");-->
+<!--    //-->
+<!--    //-->
+<!--    //     for(var i = 0; i < getAllB.length; i++){-->
+<!--    //         console.log(getAllB[i].innerHTML);-->
+<!--    //     }-->
+<!--    //-->
+<!--    // })();-->
+<!--    // MINI LAB-->
+<!--    // Create a page with a four paragraph tags.-->
+<!--    //     Two of them should have class='a' and two should have class='b'.-->
+<!--    //     Use document.getElementsByClassName() to get all the paragraphs tags from class 'b'.-->
+<!--    //     Write their outerHTML text to the console log.-->
+<!--</script>-->
 </body>
 </html>
