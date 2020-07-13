@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>favourite restaurant</title>
+    <!-- Mapbox CSS -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet'/>
+    <!-- Custom CSS -->
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 700px;
+        }
+
+        h1 {
+            color: lightpink;
+            display: flex;
+            justify-content: center;
+            font-family: Arial, Helvetica, sans-serif;
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+<div style="background-image: url('https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg');">
+<button id="btn-1">Zoom 5</button>
+<button id="btn-2">Zoom 10</button>
+<button id="btn-3">Zoom 15</button>
+<button id="btn-4">Zoom 20</button>
+<img src="https://static.wixstatic.com/media/12e9e5_25de4daf2116438c95b8617121bd1be7~mv2.png/v1/fill/w_464,h_464,usm_1.20_1.00_0.01/file.webp"
+     alt="Lis" id="Lis" width="50" height="50">
+<img src="https://s3-media0.fl.yelpcdn.com/bphoto/D6w5_cfAfgQTB_v3FhBP6Q/o.jpg" alt="GoldenWok" id="GoldenWok"
+     width="50" height="50">
+<img src="https://s3-media0.fl.yelpcdn.com/bphoto/5yWsObxE4ftnlAGFW2A_2g/o.jpg" alt="HulaPoke" id="HulaPoke" width="50"
+     height="50">
+<style>
+    .mapboxgl-marker {
+        display: block;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        padding: 0;
+    }
+</style>
+
+<h1>Favourite Restaurant</h1>
+
+
+<!-- The HTML element that serves as the Mapbox container -->
+
+<div id='map'></div>
+
+<!-- Mapbox JS -->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<script src="js/keys.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+<!-- Custom JS -->
+
+<script>
+
+    mapboxgl.accessToken = mapboxKey;
+    let map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/dark-v10',
+        zoom: 10,
+        center: [-98.567840, 29.524610]
+    });
+
+    //let the user to change the zoomsize by prompt
+
+    function promptZoom() {
+        var num = parseInt(prompt("what's the size of zoom would you like to take? 0-24"));
+        if(!isNaN(num)) {
+            map.zoomTo(num, {duration: 1500});
+        }
+    }
+
+    setTimeout(promptZoom, 5000);
+
+    //change the zoom size by button
+
+    function button1() {
+        map.setZoom(5);
+    };
+    document.getElementById("btn-1").addEventListener("click", button1);
+
+    function button2() {
+        map.setZoom(10);
+    };
+    document.getElementById("btn-2").addEventListener("click", button2);
+
+    function button3() {
+        map.setZoom(15);
+    };
+    document.getElementById("btn-3").addEventListener("click", button3);
+
+    function button4() {
+        map.setZoom(20);
+    };
+    document.getElementById("btn-4").addEventListener("click", button4);
+
+
+    var geojson = {
+        'type': 'FeatureCollection',
+        'features': [
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': "Li's restaurant",
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [ -98.493033,29.626207]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'Golden Wok',
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-98.567840, 29.524610]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'Hula Poke',
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-98.499770, 29.515890]
+                }
+            }
+        ]
+    };
+
+
+    // add markers to map
+    var el
+    geojson.features.forEach(function(marker,index) {
+        var el
+        switch(index){
+            case 0 :
+                el = document.getElementById("Lis");
+                break;
+            case 1:
+                el = document.getElementById("GoldenWok");
+                break;
+            case 2:
+                el = document.getElementById("HulaPoke");
+        }
+
+
+        // el.addEventListener('click', function() {
+        //     window.alert(marker.properties.message);
+        // });
+
+// add marker to map
+//         new mapboxgl.Marker(el)
+//             .setLngLat(marker.geometry.coordinates)
+//             .addTo(map);
+        new mapboxgl.Marker(el)
+            .setLngLat(marker.geometry.coordinates)
+            .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+                .setHTML('<h3>' + marker.properties.message + '</h3>'))
+            .addTo(map);
+
+    });
+
+
+
+
+</script>
+</div>
+</body>
+</html>
