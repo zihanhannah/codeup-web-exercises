@@ -231,6 +231,17 @@ function gettheNum(num){
     }
     return
 }
+    //fibonacci 1 1 2 3 5 8 12 20......
+    let fibonacci = function(num) {
+        let output = [0,1];
+        let i = output.length;
+        while (i<num) {
+            output.push(output[output.length - 2] + output[output.length - 1]);
+            i++;
+        }
+        return output;
+    }
+    console.log(fibonacci(9));
     // Write a function that takes in a three digit integer and returns the digit in the tens. I.e. isolateTensDigit(345) → 4
 function getMiddleOfNumber(num){
     var str =String(num);
@@ -239,7 +250,7 @@ function getMiddleOfNumber(num){
    // return num;
 
 }
-console.log(getMiddleOfNumber(567));
+// console.log(getMiddleOfNumber(567));
 
 
 
