@@ -24,12 +24,22 @@
      * list. You will need an opening AND closing <ul> tags around the entire
      * string, and <li> tags around each planet.
      */
+
     planetsString = planetsArray.join("<br>");
     console.log(planetsString);
 
-//    bonus
-    var htmlString = '<ul> <li>';
-    htmlString += planetsArray.join('</li> <li>');
-    htmlString += '</li> </ul>';
-    console.log(htmlString);
+   // bonus
+   //  var htmlString = '<ul> <li>';
+   //  htmlString += planetsArray.join('</li> <li>');
+   //  htmlString += '</li> </ul>';
+   //  console.log(htmlString);
+   //
+  var  str = "a,b,c,d";
+  var arr = str.split(",");
+  console.log(arr);
+    str = arr.join("</li><li>");
+    console.log(str);
+    str = "<ul><li>"+str;
+    str = str+"</li></ul>"
+    console.log(str);
 })();
