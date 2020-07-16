@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery_exercises</title>
+</head>
+<body>
+<div id="container">
+    <h1 id="heading"> We are learing jQuery in 2020</h1>
+</div>
+<div class="list">
+    <ul class="list" id="list">
+        <li>reading</li>
+        <li>writing</li>
+        <li>listening</li>
+        <li>speaking</li>
+    </ul>
+</div>
+<!--<div class="container" id="content">-->
+<!--    <p class="lorem">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam animi aut consequuntur dolore doloremque eius ipsa, itaque maiores neque non nostrum numquam perferendis praesentium quas ratione repellat tempore voluptate voluptatum.</p>-->
+<!--    <p class="lorem" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae commodi dolores enim error esse facere fuga harum laboriosam neque nesciunt omnis pariatur, quidem rem similique sint sunt ut vitae voluptatum.</p>-->
+<!--    <p id="hello" class="odd">hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello</p>-->
+</div id="codeup">
+<div class>
+    <h1 class="codeup">Welcome to Codeup</h1>
+    <p class="codeup">Hello</p>
+
+</div>
+    <script src="js/jquery-2.2.4.js"></script>
+    <script>
+        $(document).ready(function(){
+          // alert( $('#heading').html());
+          // var content = $("#heading").html();
+          // alert(content);
+          // alert($("#content").html());
+          //   $(".codeup").css({
+          //       'border':'solid 1px red'
+          //   })
+            $('li').css('font-size','20px');
+            $('h1 , p , li').css({ //no "" between each element
+                'backgroundColor':'pink'
+            })
+            alert($('h1').html());
+            })
+    </script>
+
+
+</body>
+</html>
