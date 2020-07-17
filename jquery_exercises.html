@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>jquery_exercises</title>
+    <style>
+        .highlighted{
+            background-color:lightgreen;
+        }
+    </style>
 </head>
 <body>
 <div id="container">
-    <h1 id="heading"> We are learing jQuery in 2020</h1>
+    <h1 id="heading"> We are learning jQuery in 2020</h1>
 </div>
 <div class="list">
     <ul class="list" id="list">
@@ -28,7 +33,7 @@
 </div>
     <script src="js/jquery-2.2.4.js"></script>
     <script>
-        $(document).ready(function(){
+        $(document).ready(function(){//grap all our jQuery
           // alert( $('#heading').html());
           // var content = $("#heading").html();
           // alert(content);
@@ -36,11 +41,24 @@
           //   $(".codeup").css({
           //       'border':'solid 1px red'
           //   })
+            $('h1').addClass('highlighted');
             $('li').css('font-size','20px');
-            $('h1 , p , li').css({ //no "" between each element
-                'backgroundColor':'pink'
-            })
-            alert($('h1').html());
+            // $('h1 , p , li').css({ //no "" between each element
+            //     backgroundColor:'pink'
+            // })
+            //
+            // for(let el of $('h1')) { alert(el.innerText); }
+            var sum = '';
+            for(let el of $('h1')){
+                sum =sum + el.innerText + " ";
+            }
+            alert(sum);
+            // alert($('h1').html());
+            // let text = '';
+            // $.each($("h1"), function (key, value) {
+            //     text += value.innerHTML + "\n";
+            // })
+            // alert(text);
             })
     </script>
 
