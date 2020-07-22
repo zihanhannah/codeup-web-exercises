@@ -2,6 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <title>Attributes And Css</title>
     <style>
         .invisible{
@@ -13,33 +18,26 @@
         .highlighted{
             background-color:#a4bfd0;
         }
-
-
     </style>
 </head>
 <body>
 <h1>Ten FAQs About National Parks:</h1>
 <dl>
     <dt><h2>How many employees are in the National Park Service?</h2></dt>
-    <dd><ul>
-        <li>Permanent, temporary, and seasonal employees: Approximately 20,000</li>
-        <li>Volunteers: More than 279,000 in 2019</li>
-    </ul></dd>
+    <dd>Permanent, temporary, and seasonal employee
+    </dd>
 
     <dt><h2>How old is the National Park System?</h2></dt>
-    <dd>The National Park Service was created by an act signed by President Woodrow Wilson on August 25, 1916. Yellowstone National Park was established by an act signed by President Ulysses S. Grant on March 1, 1872, as the nation's first national park. View the National Park System timeline.</dd>
+    <dd>The National Park Service was created by an act signed by President Woodrow Wilson on August 25, 1916.</dd>
 
     <dt><h2>How many people visit the national parks?</h2></dt>
     <dd>Total recreation visitors to the national parks in 2019: 327,516,619.</dd>
 
     <dt><h2>What is the National Park Service budget?</h2></dt>
     <dd>Fiscal Year (FY) 2014 Enacted: $2.98 billion</dd>
-    <dd>FY 2015 Enacted: $2.615 billion</dd>
-    <dd>FY 2016 Enacted:$2.851 billion</dd>
-    <dd>FY 2017 Enacted: $2.932 billion</dd>
 
     <dt><h2>How do I reserve a tour in a park?</h2></dt>
-    <dd>You can book some park tours through Recreation.gov such as Pearl Harbor National Memorial, many Mammoth Cave National Park cave tours, Independence National Historical Park tours, and more. Not all parks participate in this reservation service. For more information on tours offered at a specific park, please see the park search.</dd>
+    <dd>You can book some park tours through Recreation.gov</dd>
 
     <dt><h2>Can I bring my pet to a national park?</h2></dt>
     <dd>Some national parks welcome pets—in developed areas, on many trails and campgrounds, and in some lodging facilities. Learn more about pets in parks.</dd>
@@ -55,20 +53,64 @@
 
 
     <dt><h2>Where can I find a park map?</h2></dt>
-    <dd>You can view maps on specific park websites or find national park, National Park System, National Trails System, and other maps.</dd>
+    <dd>You can view maps on specific park websites </dd>
 </dl>
-<a href="# " id="link">Click Here to Show or Hidden the Answer</a>
+<a href="#" id="link">Click Here to Show or Hidden the Answer</a>
+<div>
+    <h3>Hot Springs National Park</h3>
+    <ul>
+        <li>Address: 369 Central Ave, Hot Springs, AR 71901</li>
+        <li>Area: 8.494 mi²</li>
+        <li>Established: April 20, 1832</li>
+        <li>Superintendent: Laura Miller</li>
+    </ul>
+</div>
+<div>
+    <h3>Big Bend</h3>
+    <ul>
+        <li>location:Texas 29.25°N 103.25°W</li>
+        <li>Established:June 12, 1944</li>
+        <li>801,163.21 acres (3,242.2 km2)</li>
+        <li>Named for the prominent bend in the Rio Grande along the U.S.–Mexico border</li>
+    </ul>
+</div>
+<div>
+    <h3>Carlsbad Caverns </h3>
+    <ul>
+        <li>Location:New Mexico 32.17°N 104.44°W</li>
+        <li>Established: May 14, 1930</li>
+        <li>46,766.45 acres (189.3 km2)</li>
+        <li>Carlsbad Caverns has 117 caves, the longest of which is over 120 miles (190 km) long. </li>
+    </ul>
+</div>
+
+<div>
+    <button type="button" id="btn1">Button 1</button>
+</div>
+<div class="container-fluid d-flex my-0">
+    <div class="container mx-4 shadow my-5 ">
+        <img src="img/drawing1.jpg">
+        <button type="button" id="btn2" class="d-flex mx-auto">Button 2</button>
+    </div>
+    <div class="container mx-4 shadow my-5">
+        <img src="img/drawing2.jpeg">
+        <button type="button" id="btn3" class="d-flex mx-auto">Button 3</button>
+    </div>
+    <div class="container mx-4 shadow my-5">
+        <img src="img/drawing3.jpg">
+        <button type="button" id="btn4" class="d-flex mx-auto">Button 4</button>
+    </div>
+</div>
 <script src="js/jquery-3.5.1.js"></script>
 <script>
     "use strict";
     $(document).ready(function () {
         $("body").css({
-            "background-image": "url('img/nationalPark.jpg')",
-            "background-repeat": "no-repeat",
+            "background-image": "url('img/naturalPark.jpeg')",
             "background-position": "center",
             "background-size": "cover",
             "width": "100%",
-            "height": "100%",
+            // "height": "100%",
             "color": "#27357E",
             "text-shadow":"1px 1px 1px pink"
         });
@@ -77,6 +119,7 @@
         $("#link").click(function(){
             $("dd").toggleClass("invisible");
         })
+
         $("dt").click(function(){
             $(this).toggleClass("highLight");
         })
@@ -91,10 +134,44 @@
                 "color","#b56257"
             )
         })
+        // $("#btn1").click(function(){
+        //    $("ul li:last-child").css(
+        //        'background-color','pink'
+        //    )
+        // })
+        $("h3").click(function(){
+            $(this).next().children().css(
+                'font-weight','bold'
+            )
+        })
+
+        // $("ul").click(function(){
+        //     $("ul li:first-child").css(
+        //         "color","orange"
+        //     )
+        // })
+        $("li").click(function(){
+            $(this).parent().children().first().css(
+                "color","orange"
+            )
+        })
+
+        $('#btn1').click(function () {                                      
+            $('ul').each(function () {                                    
+                $(this).children().last().css('background-color', 'pink');  
+            });
+         });
+
 
     });
 
 
 </script>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
 </body>
 </html>
