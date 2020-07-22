@@ -273,11 +273,21 @@ function getMiddleOfNumber(num){
         return null;
     }
 
-console.log(evenDivide(1,5));
-console.log(evenDivide("n",2));
-console.log(evenDivide(10,5));
+// console.log(evenDivide(1,5));
+// console.log(evenDivide("n",2));
+// console.log(evenDivide(10,5));
+
+    // Write a JavaScript function that takes in a length in inches (a number), and converts it to a string listing the length in feet and inches. (Example: 78 => 6’6”). Non-number arguments should have the function return null.
+        function convertInchtoFeet(num){
+    if(typeof num == "number"){
+        return ("" + Math.floor(num/12) + "'" + num % 12 +"\"");
+    }
+    return null
+}
+        console.log(convertInchtoFeet(12));
 
     </script>
+
 
 
 </body>
