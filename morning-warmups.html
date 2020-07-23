@@ -284,7 +284,16 @@ function getMiddleOfNumber(num){
     }
     return null
 }
-        console.log(convertInchtoFeet(12));
+        // console.log(convertInchtoFeet(12));
+// Write a function that takes in a string and returns the number of words in the string. Non-string inputs should return null.
+function numberOfWords(str){
+    if(typeof str == "string"){
+        return str.split(" ").length;
+    }
+    return null;
+}
+console.log(numberOfWords("hello"));
+console.log(numberOfWords(542));
 
     </script>
 
