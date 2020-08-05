@@ -292,8 +292,8 @@ function numberOfWords(str){
     }
     return null;
 }
-console.log(numberOfWords("hello"));
-console.log(numberOfWords(542));
+// console.log(numberOfWords("hello"));
+// console.log(numberOfWords(542));
     //Write a function that returns “fizz”, “buzz”, or “fizzbuzz” based on the conditions of the famous FizzBuzz exercise. Any number that doesn’t match these conditions should return the number passed. Any non-number passed should have the function return null.
 function fizzBuzz(num){
     if(typeof num == "number"){
@@ -354,7 +354,28 @@ function fizzBuzz(num){
             return a;
     }, 0);
 
-    console.log(longestHeightInMM);
+    // console.log(longestHeightInMM);
+    const tellMeAbout = ({name,age}) =>{
+        console.log(name);
+        console.log(age);
+    }
+    const person = {name:"codeup", age:"4"};
+    // tellMeAbout(person);
+
+    const numbers = [1,2,3,4,5,6,7,8,9];
+    // const evens = numbers.filter((n)=> n%2 ==0);
+    const evens = numbers.filter(function(n){
+        return n % 2 ==0;
+    })
+    // console.log(evens);
+    const increment = numbers.map(n =>{
+        if(n % 2 == 0){
+            return n = n+1;
+        } else {
+            return n = n*2;
+        }
+        });
+    console.log(increment);
 
     </script>
 
