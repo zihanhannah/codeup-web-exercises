@@ -11,8 +11,16 @@ const api_url = "https://api.github.com/users/zihanhannah/events"
 async function getInformation() {
     const response = await fetch(api_url, {headers: {'Authorization': 'PersonalAccessToken'}});
     const data = await response.json();
-    console.log(data[0].created_at);
+    let date ="";
+    for(let datum of data){
+        if(datum.type ==="PushEvent"){
+            date = datum.created_at;
+            break;
+        }
+    }
+    return date;
 }
+document.getElementsByTagName("body")[0].innerText = date;
 
 var Interval = setInterval(getInformation, 4000);
 setTimeout(() => {
@@ -26,5 +34,5 @@ delay(1000).then(() => {
     console.log("you will see tis after 1 second");
     getInformation();
 });
-delay(3000).then(() => console.log("you will see tis after 3 second"));
+delay(3000).then(() => console.log("you will see this after 3 second"));
 
